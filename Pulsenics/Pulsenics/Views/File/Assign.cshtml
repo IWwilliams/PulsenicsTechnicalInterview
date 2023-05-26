@@ -1,0 +1,69 @@
+﻿@model Pulsenics.Models.File
+
+@{
+    ViewData["Title"] = "Assign Files";
+}
+@*This view facilitates the assignment of files to users*@
+
+<h1>Assign Files To Users</h1>
+
+@using (Html.BeginForm("Assign", "File", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            <h5>File: @Model.FileName</h5>
+            <input type="hidden" name="id" value="@Model.Id" />
+        </div>
+    </div>
+    <div class="row assignSelector">
+        <div class="col-md-6">
+            <div class="form-group">
+                <select id="userId" name="userId" class="form-control" required>
+                    <option value="">-- Select User --</option>
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <option value="@user.Id">@user.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">Assign</button>
+        </div>
+    </div>
+}
+
+<h5>Users Assigned to File - @Model.FileName</h5>
+
+@if (Model.UserFiles != null && Model.UserFiles.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userFile in Model.UserFiles)
+            {
+                <tr>
+                    <td>@userFile.User.Id</td>
+                    <td>@userFile.User.Name</td>
+                    <td>
+                        <a asp-action="DeleteAssignment" asp-route-userId="@userFile.User.Id" asp-route-fileId="@Model.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No users assigned to this file.</p>
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

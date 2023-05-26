@@ -1,0 +1,63 @@
+@model IEnumerable<Pulsenics.Models.File>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*This view displays all files in the database*@
+<h1>File Page</h1>
+<p>Please manage files here and assign users to required files.</p>
+
+@using (Html.BeginForm("Index", "File", FormMethod.Get))
+{
+    <p>
+        Search by name:
+        <input type="text" name="searchTerm" value="@ViewBag.SearchTerm" />
+        <button type="submit">Search</button>
+        <button type="submit" formaction="/File/Index">Clear</button>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extension)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Extension)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                </td>
+                <td>
+                    <a asp-action="Assign" asp-route-id="@item.Id">Assign User</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">File Details</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

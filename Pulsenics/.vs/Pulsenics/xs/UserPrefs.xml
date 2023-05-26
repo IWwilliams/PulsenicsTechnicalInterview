@@ -1,0 +1,58 @@
+﻿<Properties StartupConfiguration="{1F6094D3-AC88-460B-8CCB-812375339124}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pulsenics/.gitignore">
+    <Files>
+      <File FileName="Pulsenics/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="Pulsenics/Models/File.cs" Line="16" Column="1" />
+      <File FileName="Pulsenics/Models/User.cs" Line="19" Column="1" />
+      <File FileName="Pulsenics/Data/AppDbContext.cs" Line="18" Column="56" />
+      <File FileName="Pulsenics/Models/UserFile.cs" Line="16" Column="1" />
+      <File FileName="Pulsenics/Program.cs" Line="16" Column="70" />
+      <File FileName="Pulsenics/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Pulsenics/appsettings.json" Line="13" Column="1" />
+      <File FileName="Pulsenics/Migrations/20230525213411_InitialMigration.cs" Line="100" Column="2" />
+      <File FileName="Pulsenics/Migrations/AppDbContextModelSnapshot.cs" Line="14" Column="6" />
+      <File FileName="Pulsenics/Views/File/Index.cshtml" Line="7" Column="47" />
+      <File FileName="Pulsenics/Controllers/FileController.cs" Line="188" Column="32" />
+      <File FileName="Pulsenics/Migrations/20230525222810_AddFilesToDatabase.cs" Line="16" Column="1" />
+      <File FileName="Pulsenics/Views/User/Create.cshtml" Line="7" Column="1" />
+      <File FileName="Pulsenics/Controllers/UserController.cs" Line="173" Column="40" />
+      <File FileName="Pulsenics/Views/User/Index.cshtml" Line="11" Column="42" />
+      <File FileName="Pulsenics/Views/File/Assign.cshtml" Line="7" Column="1" />
+      <File FileName="Pulsenics/Views/File/Details.cshtml" Line="6" Column="52" />
+      <File FileName="Pulsenics/Migrations/20230526033105_AddUserFilesEntity.cs" Line="19" Column="17" />
+      <File FileName="Pulsenics/Views/User/Details.cshtml" Line="7" Column="41" />
+      <File FileName="Pulsenics/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Pulsenics/Views/Shared/_Layout.cshtml" Line="24" Column="1" />
+      <File FileName="Pulsenics/Migrations/CustomMigration.cs" Line="49" Column="75" />
+      <File FileName="Pulsenics/Services/FileTrackerService.cs" Line="89" Column="100" />
+      <File FileName="Pulsenics/wwwroot/css/site.css" Line="25" Column="20" />
+      <File FileName="Pulsenics/Views/User/Edit.cshtml" Line="7" Column="41" />
+      <File FileName="Pulsenics/Views/User/Delete.cshtml" Line="6" Column="38" />
+      <File FileName="Pulsenics/Data/folderPath.cs" Line="6" Column="40" />
+      <File FileName="Pulsenics/.gitignore" Line="21" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Pulsenics" expanded="True">
+            <Node name="Pulsenics" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name=".gitignore" selected="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Pulsenics PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

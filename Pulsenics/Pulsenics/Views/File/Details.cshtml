@@ -1,0 +1,75 @@
+@model Pulsenics.Models.File
+
+@{
+    ViewData["Title"] = "Details";
+}
+@*This view facilitates the viewing of user details*@
+<h1>File Details</h1>
+
+<div>
+
+    <h4>File</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FileName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Extension)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Extension)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+    </dl>
+</div>
+
+<h2>Users Assigned to File - @Model.FileName</h2>
+
+@if (Model.UserFiles != null && Model.UserFiles.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userFile in Model.UserFiles)
+            {
+                <tr>
+                    <td>@userFile.User.Id</td>
+                    <td>@userFile.User.Name</td>
+                    <td>
+                        <a asp-action="Assign" asp-route-id="@Model.Id">Assign Redirect (Delete User, Add Users) </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No users assigned to this file.</p>
+}
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
